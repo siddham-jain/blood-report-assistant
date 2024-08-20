@@ -1,0 +1,40 @@
+tasks:
+  analyze_blood_test:
+    description: >
+      Start by reviewing the patient's details, then examine and summarize the blood test report provided: ${blood_test_report}
+    agent: medical_analyst
+    expected_output: >
+      Include patient details at the top, followed by a simple summary of the blood test findings.
+
+  search_for_articles:
+    description: >
+      Find online articles related to the health concerns highlighted in the blood test summary.
+    agent: health_researcher
+    expected_output: >
+      A collection of articles with URLs and brief descriptions of each.
+
+  provide_recommendations:
+    description: >
+      Offer health advice based on the articles and blood test summary. Include recommendations and link to relevant articles.
+    expected_output: >
+      A full summary of the report in clear, easy-to-understand language, 
+      followed by a table of blood parameter levels, and a list of actionable health tips, with each tip linking to its source // FOLLOW THE GIVEN FORMAT !!! //
+
+      ## Summary
+      [Provide a brief summary of the blood report here, highlighting blood parameter levels like hemoglobin, WBC count, etc. **Only include if necessary:-(Example:-Include data from the blood report such as total platelet count [use original blood report data])**]
+
+      ## Levels
+      | Parameter | Level | Normal Range |
+
+      ## Recommendations
+      - [Recommendation 1 (e.g., eat healthily)](https://source1.com)
+      - [Recommendation 2 (e.g., drink water)](https://source2.com)
+      - [Recommendation 3 (e.g., eat healthily)](https://source3.com)
+    agent: health_advisor
+
+  coordinate_process:
+    description: >
+      Oversee the workflow between the Medical Analyst, Health Researcher, and Health Advisor to ensure smooth operations.
+    agent: coordinator
+    expected_output: >
+      Organized task flow with combined results from all agents.
