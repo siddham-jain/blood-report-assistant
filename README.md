@@ -53,7 +53,6 @@ poetry install
 
 **Add your `GROQ_API_KEY` and `SERPER_API_KEY` into the `.env` file**
 
-By default it uses `OPENAI_API_KEY`
 
 ## Running the Project
 
