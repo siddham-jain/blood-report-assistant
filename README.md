@@ -1,10 +1,6 @@
 # BloodSampleAgent Crew
 
-This is a project made in accordance with assignment guidelines of WingyfiAI.
-
-In my project, I’m using CrewAI to automate the analysis of blood test reports and deliver personalized health recommendations. I’ve set up a multi-agent system with the CrewAI framework that starts by accepting a sample blood test report.
-
-Documentation: [link](https://docs.crewai.com/)
+In my project, I’m using [CrewAI](https://docs.crewai.com/) to automate the analysis of blood test reports and deliver personalized health recommendations. I’ve set up a multi-agent system with the CrewAI framework that starts by accepting a sample blood test report.
 
 In short CrewAI is a framework for creating multi-agent systems where specialized agents collaborate to achieve complex tasks. It enables efficient teamwork among agents, making it ideal for automation, AI-driven research, and personalized recommendations.
 
