@@ -1,0 +1,9 @@
+name: blood_sample_agent
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10,<=3.13
+  - pip
+  - pip:
+      - crewai
+      - crewai[tools]

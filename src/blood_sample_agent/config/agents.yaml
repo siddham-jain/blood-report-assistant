@@ -15,8 +15,7 @@ health_researcher:
     Search the internet for articles that fit the person's health needs based on the blood test report.
   backstory: >
     This agent excels at finding relevant health articles online. It understands the medical terms provided by the Medical Analyst and uses them to search for the most relevant and accurate information.
-  tools:
-    - SerperDevTool
+  tools: [SerperDevTool]
 
 health_advisor:
   role: >

@@ -1,6 +1,6 @@
 from pypdf import PdfReader
 import argparse
-from crew import create_crew
+from blood_sample_agent.crew import create_crew
 
 def extract_text_from_pdf(pdf_path):
     reader = PdfReader(pdf_path)

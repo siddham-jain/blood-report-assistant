@@ -28,8 +28,9 @@ The Coordinator oversees the workflow, ensuring that tasks are executed smoothly
 
 ## Installation
 
-Ensure you have Python >=3.10 <=3.13 installed on your system. This project uses [Poetry](https://python-poetry.org/) for dependency management and package handling, offering a seamless setup and execution experience.
+Ensure you have Python >=3.10 <=3.13 installed on your system. This project uses [Poetry](https://python-poetry.org/) and conda for dependency management and package handling, offering a seamless setup and execution experience.
 
+## Using `poetry`
 First, if you haven't already, install Poetry:
 
 ```bash
@@ -45,10 +46,32 @@ poetry lock
 ```bash
 poetry install
 ```
-### Customizing
 
-**Add your `GROQ_API_KEY` and `SERPER_API_KEY` into the `.env` file**
+## Using `miniconda`
+1. If you haven't already, install [miniconda](https://docs.anaconda.com/miniconda/) as per your requirements:
 
+    For linux:
+    ```bash
+    curl -o Miniconda3-latest-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda
+    export PATH="$HOME/miniconda/bin:$PATH"
+    ```
+    For macOS:
+    ```bash
+    curl -o Miniconda3-latest-MacOSX-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+    bash Miniconda3-latest-MacOSX-x86_64.sh -b -p $HOME/miniconda
+    export PATH="$HOME/miniconda/bin:$PATH"
+    ```
+    For Windows:
+    ```bash
+    curl -o Miniconda3-latest-Windows-x86_64.exe https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
+    start /wait Miniconda3-latest-Windows-x86_64.exe /InstallationType=JustMe /AddToPath=1 /RegisterPython=0 /S /D=%UserProfile%\Miniconda3
+    ```
+
+2. Navigate to project's directory and install the dependencies 
+    ```bash
+    conda env create --name ${your_env_name} --file environment.yml && conda activate ${your_env_name}
+    ```
 
 ## Running the Project
 
@@ -61,7 +84,12 @@ or
 ```bash
 poetry run blood_sample_agent
 ```
+or
+```bash
+cd src
+python -m blood_sample_agent.main ${pdf_path}
+```
+Replace `${pdf_path}` with path of sample report
 
-This command initializes the blood_sample_agent Crew, assembling the agents and assigning them tasks as defined in your configuration.
+This command initializes the blood_sample_agent Crew, assembling the agents and assigning them tasks as defined in the configuration.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
